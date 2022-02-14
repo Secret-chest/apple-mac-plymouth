@@ -11,37 +11,35 @@ NC='\033[0m'
 if ((${EUID:-0} || "$(id -u)")); then
   clear
   sleep 1.5
-  	echo -e "${NC}Sorry, You are not root"
+  	echo -e "${NC}You are not root."
   sleep 1.0
-  	echo "Please run using sudo command"
+  	echo "Please run this using sudo"
   sleep 1.0
-  	echo -e "${Text}Cancelling Installation Command"
+  	echo -e "${Text}Aborted."
   sleep 1.5
   exit 1
 else
   clear
   sleep 1.5
-  	echo -e "${Text}Please Wait Until Installing Complete"
+  	echo -e "${Text}Please wait until the installation is complete. This won't take too long"
   sleep 1.5
-  	echo -e "${NC}Copying All Apple Mac Plymouth file"
-  	cp -iRv apple-mac-plymouth /usr/share/plymouth/themes/
+  	echo -e "${NC}Copying theme files"
+  	cp -iRv MaterialLinuxMint /usr/share/plymouth/themes/
   sleep 1.5
   clear
-  	echo -e "${Text}Please Wait Until Installing Complete"
-  	echo -e "${NC}Configuring All Apple Mac Plymouth"
   sleep 1.5
-  	update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/apple-mac-plymouth/apple-mac-plymouth.plymouth 100
+  	update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/MaterialLinuxMint/MaterialLinuxMint.plymouth 100
   	
-  	echo -e "${Text}All Apple Mac Plymouth Theme Configured"
+  	echo -e "${Text}Configured"
   sleep 1.5
   clear
   	echo "Select Number of Plymouth Theme"
   sleep 1.0
-    echo -e "${NC} "
+    echo -e "${NC} Please choose the \"MaterialLinuxMint\" theme here"
   	update-alternatives --config default.plymouth
   	update-initramfs -u
   sleep 0.5
-  	echo "Finish"
+  	echo "Finished"
   sleep 1.5
   clear
 fi

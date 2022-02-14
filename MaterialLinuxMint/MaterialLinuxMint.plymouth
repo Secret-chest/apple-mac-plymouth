@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=MaterialLinuxMint
+Description=A Linux Mint plymouth theme
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/MaterialLinuxMint
+ScriptFile=/usr/share/plymouth/themes/MaterialLinuxMint/MaterialLinuxMint.script
